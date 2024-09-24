@@ -1,55 +1,5 @@
 import ServiceCard from "@/components/Services/Card";
-
-export interface Item {
-  id: number;
-  name: string;
-  image: string;
-}
-
-const ServiceItems: Item[] = [
-  {
-    id: 0o1,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o2,
-    name: "creative",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o3,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o4,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o5,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o6,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-  {
-    id: 0o7,
-    name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
-  },
-];
+import { ServiceItems } from "@/content/services";
 
 const Services = () => {
   return (
