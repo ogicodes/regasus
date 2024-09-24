@@ -63,7 +63,7 @@ const BottomSheet = ({
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full bg-[#212121] mx-auto p-8 rounded-t-2xl shadow-lg h-2/3"
+            className="relative w-full bg-[#212121] mx-auto p-8 rounded-t-2xl shadow-lg h-2/3 h-full overflow-hidden"
             variants={sheetVariants}
             initial="hidden"
             animate="visible"
