@@ -1,6 +1,9 @@
+import ContactModal from "@/components/ContactModal";
 
 export default function Home() {
   return (
-    <>Hello</>
+    <div>
+      <ContactModal />
+    </div>
   );
 }
