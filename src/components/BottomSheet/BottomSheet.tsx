@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
+import { Button } from "@nextui-org/react";
 
 interface ServiceModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactElement;
+  hideCloseButton?: boolean;
 }
 
 /**
@@ -13,7 +16,12 @@ interface ServiceModalProps {
  * on the page when open. The modal slides up from the bottom of the screen
  * and closes when the user clicks on the overlaw or a close button.
  * */
-const BottomSheet = ({ isOpen, onClose, children }: ServiceModalProps) => {
+const BottomSheet = ({
+  isOpen,
+  onClose,
+  children,
+  hideCloseButton = false,
+}: ServiceModalProps) => {
   /**
    * useEffect to toggle the 'overflow-hidden' class on the body.
    * It prevents scrolling when the sheet is open.
@@ -55,13 +63,20 @@ const BottomSheet = ({ isOpen, onClose, children }: ServiceModalProps) => {
           onClick={onClose}
         >
           <motion.div
-            className="w-full p-4"
+            className="relative w-full bg-[#212121] mx-auto p-8 rounded-t-2xl shadow-lg h-2/3"
             variants={sheetVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
             onClick={(e) => e.stopPropagation()}
           >
+            {!hideCloseButton && (
+              <div className="absolute right-0 pr-8">
+                <Button isIconOnly variant="ghost" onPress={onClose}>
+                  <X />
+                </Button>
+              </div>
+            )}
             {children}
           </motion.div>
         </motion.section>
