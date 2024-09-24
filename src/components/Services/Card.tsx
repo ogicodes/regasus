@@ -4,8 +4,10 @@ import { ServiceItem } from "@/content/services";
 import BottomSheet from "@/components/BottomSheet/BottomSheet";
 import { useBottomsheet } from "@/utils/hooks/useBottomsheet";
 
+export type CardGrid = "span" | "none";
+
 interface ServiceCardProps {
-  grid?: "span" | "none";
+  grid?: CardGrid;
   item: ServiceItem;
 }
 
