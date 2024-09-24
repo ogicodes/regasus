@@ -1,21 +1,21 @@
 "use client";
 
-import { Item } from "@/app/services/page";
+import { ServiceItem } from "@/content/services";
 import BottomSheet from "@/components/BottomSheet/BottomSheet";
 import { useBottomsheet } from "@/utils/hooks/useBottomsheet";
 
 interface ServiceCardProps {
   grid?: "span" | "none";
-  item: Item;
+  item: ServiceItem;
 }
 
 const GRIDS = {
-  span: "col-span-2",
+  span: "md:col-span-2",
   none: "",
 };
 
 const ServiceCard = ({ grid = "none", item }: ServiceCardProps) => {
-  const { id, name, image } = item;
+  const { id, name, image, description } = item;
   const gridStyle = GRIDS[grid];
   const { sheetOpen, onOpen, onClose } = useBottomsheet();
 
@@ -38,8 +38,17 @@ const ServiceCard = ({ grid = "none", item }: ServiceCardProps) => {
         </div>
       </div>
       <BottomSheet isOpen={sheetOpen} onClose={onClose}>
-        <div>
-          <h1>{name}</h1>
+        <div className="h-full overflow-y-auto">
+          <h2 className="text-6xl tracking-tight uppercase">{name}</h2>
+          <div className="mt-16 flex md:flex-row flex-col gap-16">
+            <img src={image} className="w-[50%]" />
+            <div>
+              <h3 className="text-3xl tracking-tighter uppercase">{name}</h3>
+              <p className="mt-8 text-md tracking-tight whitespace-pre">
+                {description}
+              </p>
+            </div>
+          </div>
         </div>
       </BottomSheet>
     </>
