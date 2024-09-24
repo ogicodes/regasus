@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Providers } from "@/providers/Providers";
 import NavBar from "@/components/NavBar/NavBar";
+import { inter } from "@/utils/fonts";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body>
+      <body className={`${inter.className}`}>
         <Providers>
           <NavBar />
           <main className="mt-32 px-8">{children}</main>
@@ -18,4 +19,3 @@ export default function RootLayout({
     </html>
   );
 }
-
