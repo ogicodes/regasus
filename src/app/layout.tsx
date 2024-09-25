@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Providers } from "@/providers/Providers";
 import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 import { inter, cloister } from "@/utils/fonts";
 
 export default function RootLayout({
@@ -14,6 +15,7 @@ export default function RootLayout({
         <Providers>
           <NavBar />
           <main className="mt-32 px-8">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
