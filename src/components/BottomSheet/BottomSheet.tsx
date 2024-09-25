@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
@@ -22,11 +24,14 @@ const BottomSheet = ({
   children,
   hideCloseButton = false,
 }: ServiceModalProps) => {
+  const [isMounted, setIsMounted] = useState(false);
   /**
    * useEffect to toggle the 'overflow-hidden' class on the body.
    * It prevents scrolling when the sheet is open.
    * */
   useEffect(() => {
+    setIsMounted(true);
+
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
@@ -48,12 +53,14 @@ const BottomSheet = ({
     exit: { y: "100%", transition: { ease: "easeInOut", duration: 0.4 } },
   };
 
+  if (!isMounted) return null;
+
   // Renders the sheet should isOpen is true
   return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.section
-          className="fixed inset-0 bg-[#212121] bg-opacity-50 backdrop-blur-lg flex justify-center items-end z-[10002]"
+          className="fixed inset-0 flex justify-center items-end z-[10002] backdrop-blur-lg bg-[#000000] bg-opacity-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{
@@ -63,7 +70,7 @@ const BottomSheet = ({
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full bg-[#212121] mx-auto p-8 rounded-t-2xl shadow-lg h-2/3 h-full overflow-hidden"
+            className="relative w-full bg-[#212121] p-8 rounded-t-2xl shadow-lg h-[75%] overflow-hidden"
             variants={sheetVariants}
             initial="hidden"
             animate="visible"
