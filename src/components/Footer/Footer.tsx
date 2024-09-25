@@ -32,6 +32,7 @@ const Footer = () => {
             as={NextLink}
             key={link.name}
             variant="light"
+            radius="none"
             className="text-lg md:text-2xl uppercase font-light tracking-tighter"
             endContent={<ArrowUpRight />}
           >
