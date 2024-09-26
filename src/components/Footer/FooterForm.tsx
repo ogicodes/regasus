@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Input, Button } from "@nextui-org/react";
 import { ArrowRight } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 const inputClasses = {
   label: "text-[#fafafa] uppercase text-sm",
@@ -25,6 +26,12 @@ const FooterForm = () => {
 
   const handleSubmit = () => {
     console.info("Form Submitted");
+    toast.success("Form submitted!", {
+      style: {
+        backgroundColor: "#212121",
+        color: "#fafafa",
+      },
+    });
     setInquiry("");
     setNumber("");
   };
