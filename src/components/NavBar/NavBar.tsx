@@ -4,6 +4,8 @@ import { Tabs, Tab } from "@nextui-org/react";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { InlineLogo } from "../Logos";
+import ContactModal from "../ContactModal/ContactModal";
+import { useDisclosure } from "@nextui-org/react";
 
 interface RouteItem {
   id: string;
@@ -40,6 +42,8 @@ const NavBar = () => {
 
   const [selected, setSelected] = useState<string>("our-story");
 
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
   useEffect(() => {
     switch (pathname) {
       case "/":
@@ -59,7 +63,7 @@ const NavBar = () => {
 
   const handlePress = (key: string) => {
     if (key === "contact") {
-      console.log(`handle the modal here`);
+      onOpen();
       setSelected("contact");
     } else {
       router.push(key === "our-story" ? `/` : `/${key}`);
@@ -88,6 +92,7 @@ const NavBar = () => {
       >
         {(item: RouteItem) => <Tab key={item.id} title={item.label} />}
       </Tabs>
+      <ContactModal isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} />
     </nav>
   );
 };
