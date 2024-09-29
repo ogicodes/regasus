@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+.embla {
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+  }
