@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/images/hero.png')",
+        "half-hero-pattern": "url('/images/halfSizeHero.png')",
+        "quarter-hero-pattern": "url('/images/quarterSizeHero.png')",
+        "mobile-hero-pattern": "url('/images/mobileHero.png')",
+      },
       fontFamily: {
         cloister: ["var(--font-cloister)"],
       },
