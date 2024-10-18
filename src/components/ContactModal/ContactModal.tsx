@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Modal,
   ModalContent,
@@ -96,15 +94,30 @@ export default function ContactModal({
     }
   };
 
-  const handleSubmitClick = () => {
+  const handleSubmitClick = async () => {
     if (validateStep3()) {
-      console.log({
-        name,
-        email,
-        company,
-        projectDetails,
-      });
-      setCurrentStep(4); // Success screen
+      try {
+        const res = await fetch("/api/send-email", {
+          method: "POST",
+          body: JSON.stringify({ name, email, company, projectDetails }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!res.ok) {
+          const errorMessage = `Error: ${res.status} ${res.statusText}`;
+          throw new Error(errorMessage);
+        }
+
+        const json = await res.json();
+
+        console.log(json);
+        setCurrentStep(4);
+      } catch (e) {
+        console.error("Submission error:", e);
+        alert("Something went wrong. Please try again.");
+      }
     }
   };
 
