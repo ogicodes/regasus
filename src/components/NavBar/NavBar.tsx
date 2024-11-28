@@ -72,7 +72,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed h-fit w-fit z-[1000] bottom-0 md:top-0 mb-6 md:mb-0 md:mt-8 select-none overscroll-none">
+    <nav className="fixed h-fit w-screen z-[1000] bottom-0 md:top-0 mb-6 md:mb-0 md:mt-8 select-none overscroll-none">
       <div className="md:absolute md:ml-8 fixed top-4 left-4">
         <InlineLogo />
       </div>
