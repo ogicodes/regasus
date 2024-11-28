@@ -1,12 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { ServiceItems } from "@/content/services";
 import { Button } from "@nextui-org/react";
 import { ArrowRight } from "lucide-react";
+import { featuredWorkItems } from "@/content/FeaturedWork";
+import { useRouter } from "next/navigation";
 
 const PickerGallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const handleGalleryItem = (index: number) => {
     if (galleryRef.current) {
@@ -28,15 +30,16 @@ const PickerGallery = () => {
           <div className="w-full flex justify-center items-center md:hidden">
             <h1 className="text-3xl uppercase tracking-tight">what we do</h1>
           </div>
-          {ServiceItems.map((item, idx) => (
+          {featuredWorkItems.map((item, idx) => (
             <div
               key={item.id}
-              className={`w-full md:w-[400px] flex-shrink-0 transition-transform ${idx >= 3 && "hidden md:block"}`}
+              className={`w-full md:w-[400px] flex-shrink-0 transition-transform ${idx >= 5 && "hidden md:block"}`}
             >
               <img
-                src={item.image}
+                src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""}
                 alt={item.name}
                 className="w-full h-[260px] md:w-[400px] md:h-[640px] object-cover"
+                onClick={() => router.push(item.url)}
               />
               <div className="mt-4 flex w-full gap-8 justify-between md:justify-start">
                 <p className="text-sm text-[#757575]">{`00${item.id}`}</p>
@@ -49,7 +52,7 @@ const PickerGallery = () => {
         </div>
       </div>
       <div className="hidden md:flex w-1/3 flex-col items-end">
-        {ServiceItems.map((item, idx) => (
+        {featuredWorkItems.map((item, idx) => (
           <Button
             key={item.id}
             className="relative mb-2 flex justify-start max-w-[300px] w-full uppercase font-light tracking-tight"

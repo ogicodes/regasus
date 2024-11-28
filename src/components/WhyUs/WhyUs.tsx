@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import krista from "../../../public/images/krista.jpg";
+
 export default function WhyUs() {
   return (
     <section className="flex flex-col items-end my-12">
@@ -5,10 +8,10 @@ export default function WhyUs() {
       <h2 className="text-6xl font-cloister">Regasus</h2>
       <div className="flex flex-col justify-center">
         <div className="flex flex-col items-center justify-center md:flex-row">
-          <img
-            src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg"
-            alt="placeholder"
-            className="w-full h-[260px] md:w-[400px] md:h-[400px] object-cover mt-4 md:order-last"
+          <Image
+            src={krista}
+            alt="Picture of Krista"
+            className="w-full h-[260px] md:w-[400px] md:h-[400px] object-contain mt-4 md:order-last"
           />
           <p className="py-4 md:p-4 text-justify ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
