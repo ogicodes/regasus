@@ -178,7 +178,7 @@ export default function ContactModal({
 
             {currentStep === 2 && (
               <ModalBody className="flex flex-col gap-14 text-[#160206]">
-                <p>What's your email?</p>
+                <p>What`&apos;`s your email?</p>
                 <Input
                   isRequired
                   type="email"
@@ -192,7 +192,7 @@ export default function ContactModal({
                 />
                 {emailError && <p className="text-red-500">{emailError}</p>}
 
-                <p>What's the name of your company?</p>
+                <p>What`&apos;`s the name of your company?</p>
                 <Input
                   isRequired
                   type="text"

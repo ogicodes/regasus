@@ -1,6 +1,6 @@
 import { featuredWorkItems } from "@/content/FeaturedWork";
 import { CardGrid } from "@/components/Services/Card";
-import ClientsCard from "@/components/Clients/card";
+import ClientsCard from "@/components/Clients/Card";
 
 const Clients = () => {
   const defineGrid = (idx: number): CardGrid => {

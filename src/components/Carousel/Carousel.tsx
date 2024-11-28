@@ -6,6 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import BottomSheet from "@/components/BottomSheet/BottomSheet";
 import { useBottomsheet } from "@/utils/hooks/useBottomsheet";
 import { ServiceItem } from "@/content/services";
+import Image from "next/image";
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -13,7 +14,7 @@ type PropType = {
 };
 
 export default function Carousel({ options, ServiceItems }: PropType) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [ emblaRef ] = useEmblaCarousel(options);
   const { sheetOpen, onOpen, onClose } = useBottomsheet();
 
   return (
@@ -30,7 +31,7 @@ export default function Carousel({ options, ServiceItems }: PropType) {
                 onClick={onOpen}
                 className=" shadow-[inset_0_0_0_0.2rem] text-4xl font-semibold flex items-center justify-center h-[19rem] select-none bg-white"
               >
-                <img
+                <Image
                   src={item.image}
                   alt="placeholder"
                   className="w-auto h-auto object-contain mt-4 md:order-last"
@@ -40,7 +41,7 @@ export default function Carousel({ options, ServiceItems }: PropType) {
                 <div className="h-full overflow-y-auto">
                   <h2 className="text-6xl tracking-tight uppercase">{item.name}</h2>
                   <div className="mt-16 flex md:flex-row flex-col gap-16">
-                    <img src={item.image} className="w-[50%]" />
+                    <Image src={item.image} className="w-[50%]" alt="image" />
                     <div>
                       <h3 className="text-3xl tracking-tighter uppercase">
                         {item.name}

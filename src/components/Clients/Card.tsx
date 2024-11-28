@@ -3,6 +3,7 @@
 import { FeaturedWork } from "@/content/FeaturedWork";
 import BottomSheet from "@/components/BottomSheet/BottomSheet";
 import { useBottomsheet } from "@/utils/hooks/useBottomsheet";
+import Image from "next/image";
 
 export type CardGrid = "span" | "none";
 
@@ -17,7 +18,7 @@ const GRIDS = {
 };
 
 const ClientsCard = ({ grid = "none", item }: ClientsCardProps) => {
-  const { id, name, image, description } = item;
+  const { id, name, description } = item;
   const gridStyle = GRIDS[grid];
   const { sheetOpen, onOpen, onClose } = useBottomsheet();
 
@@ -28,7 +29,7 @@ const ClientsCard = ({ grid = "none", item }: ClientsCardProps) => {
         onClick={onOpen}
       >
         <div className="">
-          <img
+          <Image
             src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""}
             alt="Service Image"
             className="w-full h-[300px] object-cover"
@@ -43,7 +44,7 @@ const ClientsCard = ({ grid = "none", item }: ClientsCardProps) => {
         <div className="h-full overflow-y-auto">
           <h2 className="text-6xl tracking-tight uppercase">{name}</h2>
           <div className="mt-16 flex md:flex-row flex-col gap-16">
-            <img src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""} className="w-[50%]" />
+            <Image src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""} className="w-[50%]" alt="image" />
             <div>
               <h3 className="text-3xl tracking-tighter uppercase">{name}</h3>
               <p className="mt-8 text-md tracking-tight whitespace-pre">

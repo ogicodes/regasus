@@ -3,6 +3,7 @@
 import { ServiceItem } from "@/content/services";
 import BottomSheet from "@/components/BottomSheet/BottomSheet";
 import { useBottomsheet } from "@/utils/hooks/useBottomsheet";
+import Image from "next/image";
 
 export type CardGrid = "span" | "none";
 
@@ -28,7 +29,7 @@ const ServiceCard = ({ grid = "none", item }: ServiceCardProps) => {
         onClick={onOpen}
       >
         <div className="">
-          <img
+          <Image
             src={image}
             alt="Service Image"
             className="w-full h-[300px] object-cover"
@@ -43,7 +44,7 @@ const ServiceCard = ({ grid = "none", item }: ServiceCardProps) => {
         <div className="h-full overflow-y-auto">
           <h2 className="text-6xl tracking-tight uppercase">{name}</h2>
           <div className="mt-16 flex md:flex-row flex-col gap-16">
-            <img src={image} className="w-[50%]" />
+            <Image src={image} className="w-[50%]" alt="image" />
             <div>
               <h3 className="text-3xl tracking-tighter uppercase">{name}</h3>
               <p className="mt-8 text-md tracking-tight whitespace-pre">

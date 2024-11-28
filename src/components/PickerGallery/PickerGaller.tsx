@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/react";
 import { ArrowRight } from "lucide-react";
 import { featuredWorkItems } from "@/content/FeaturedWork";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const PickerGallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ const PickerGallery = () => {
               key={item.id}
               className={`w-full md:w-[400px] flex-shrink-0 transition-transform ${idx >= 5 && "hidden md:block"}`}
             >
-              <img
+              <Image
                 src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""}
                 alt={item.name}
                 className="w-full h-[260px] md:w-[400px] md:h-[640px] object-cover"
