@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        crimson: '#DC143C',
+      },
       backgroundImage: {
         "hero-pattern": "url('/images/hero.png')",
         "half-hero-pattern": "url('/images/halfSizeHero.png')",

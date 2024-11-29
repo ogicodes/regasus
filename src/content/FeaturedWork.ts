@@ -26,8 +26,7 @@ export const featuredWorkItems: FeaturedWork[] = [
     {
         id: 0o3,
         name: "Featured Work: Happy Sundae",
-        image:
-          "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/45862032-a54d-4bbc-869a-8c9c35ee242c.jpg",
+        imageFile: true,
         url: "https://www.instagram.com/happysundae.ca/?hl=en",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },

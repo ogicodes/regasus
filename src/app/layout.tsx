@@ -16,7 +16,7 @@ export default function RootLayout({
         <Providers>
           <Toaster position="top-right" />
           <NavBar />
-          <main className="mt-32 px-8">{children}</main>
+              <main className="mt-32 px-8">{children}</main>
           <Footer />
         </Providers>
       </body>
