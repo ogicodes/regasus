@@ -1,7 +1,11 @@
+import placeholderLight from "../../public/images/placeholder-light.jpg";
+import placeholderDark from "../../public/images/placeholder-dark.jpg";
+import { StaticImageData } from "next/image";
+
 export interface ServiceItem {
   id: number;
   name: string;
-  image: string;
+  image: StaticImageData;
   description: string;
 }
 
@@ -9,8 +13,7 @@ export const ServiceItems: ServiceItem[] = [
   {
     id: 0o1,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderLight,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 Aliquam maximus nec quam et cursus. 
@@ -30,8 +33,7 @@ at accumsan. Maecenas ullamcorper sagittis quam.`,
   {
     id: 0o2,
     name: "creative",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderDark,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 
@@ -51,8 +53,7 @@ at accumsan. maecenas ullamcorper sagittis quam.`,
   {
     id: 0o3,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderLight,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 
@@ -72,8 +73,7 @@ at accumsan. maecenas ullamcorper sagittis quam.`,
   {
     id: 0o4,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderDark,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 
@@ -93,8 +93,7 @@ at accumsan. maecenas ullamcorper sagittis quam.`,
   {
     id: 0o5,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderLight,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 
@@ -114,8 +113,7 @@ at accumsan. maecenas ullamcorper sagittis quam.`,
   {
     id: 0o6,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderDark,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 
@@ -135,8 +133,7 @@ at accumsan. maecenas ullamcorper sagittis quam.`,
   {
     id: 0o7,
     name: "social media",
-    image:
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg",
+    image: placeholderLight,
     description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 curabitur justo sem, tempor non porta ac, pulvinar nec nulla. 
 aliquam maximus nec quam et cursus. 

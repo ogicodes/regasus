@@ -35,13 +35,15 @@ export default function Carousel({ options, ServiceItems }: PropType) {
                   src={item.image}
                   alt="placeholder"
                   className="w-auto h-auto object-contain mt-4 md:order-last"
+                  width={40}
+                  height={40}
                 />
               </div>
               <BottomSheet isOpen={sheetOpen} onClose={onClose}>
                 <div className="h-full overflow-y-auto">
                   <h2 className="text-6xl tracking-tight uppercase">{item.name}</h2>
                   <div className="mt-16 flex md:flex-row flex-col gap-16">
-                    <Image src={item.image} className="w-[50%]" alt="image" />
+                    <Image src={item.image} className="w-[50%]" alt="image" width={40} height={40} />
                     <div>
                       <h3 className="text-3xl tracking-tighter uppercase">
                         {item.name}

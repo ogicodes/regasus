@@ -12,6 +12,8 @@ export default function WhyUs() {
             src={krista}
             alt="Picture of Krista"
             className="w-full h-[260px] md:w-[400px] md:h-[400px] object-contain mt-4 md:order-last"
+            width={400}
+            height={400}
           />
           <p className="py-4 md:p-4 text-justify ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur

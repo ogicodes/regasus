@@ -39,6 +39,8 @@ const PickerGallery = () => {
               <Image
                 src={item.image ? item.image : item.imageFile ? `/images/0${item.id}.png` : ""}
                 alt={item.name}
+                width={400}
+                height={400}
                 className="w-full h-[260px] md:w-[400px] md:h-[640px] object-cover"
                 onClick={() => router.push(item.url)}
               />
